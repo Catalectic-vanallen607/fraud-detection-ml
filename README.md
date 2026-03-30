@@ -89,15 +89,19 @@ A naive model can achieve high accuracy by predicting all transactions as non-fr
 
 ## Precision-Recall Curve
 
-![Precision-Recall Curve](output.png)
+![Precision-Recall Curve Comparison](pr_curve_comparison.png)
 
-The precision-recall curve helps evaluate model performance on the minority fraud class, which is more informative than accuracy for this highly imbalanced dataset.
+The precision-recall curves for Logistic Regression and Random Forest largely overlap, indicating that both models have similar ability to rank fraudulent transactions.
 
-  * Accuracy is misleading for imbalanced datasets
+However, differences emerge at specific thresholds:
+  
   * Precision and recall are more meaningful metrics for fraud detection
+  * Logistic Regression provides greater flexibility for recall optimization
+  * Random Forest achieves higher precision at stricter thresholds
   * Class weighting significantly improves fraud recall
-  * Threshold tuning is critical for controlling model behavior
   * Model selection depends on business goals (recall vs precision tradeoff)
+
+This highlights that model differences are more apparent in threshold behavior than overall ranking performance
 
 ---
 
