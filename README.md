@@ -88,6 +88,10 @@ There is a clear tradeoff between precision and recall. In fraud detection, reca
 ![Precision-Recall Curve](output.png)
 
 The precision-recall curve helps evaluate model performance on the minority fraud class, which is more informative than accuracy for this highly imbalanced dataset.
+
+* From the precision-recall curve, an operating point around recall ≈ 0.7–0.75 achieves precision ≈ 0.9.  
+* This represents a strong balance between detecting fraud and minimizing false positives, making it a practical candidate threshold depending on business requirements.
+
 ---
 
 ## Key Learnings
