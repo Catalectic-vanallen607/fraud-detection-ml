@@ -92,10 +92,16 @@ The precision-recall curve helps evaluate model performance on the minority frau
 
 ## Key Learnings
 
-* Accuracy is misleading for imbalanced datasets
-* Precision and recall are more meaningful metrics
-* Class weighting can significantly improve recall
-* Threshold tuning is critical for real-world usability
+* Identified severe class imbalance (~0.2% fraud)
+* Baseline model achieved high accuracy (~99%) but poor fraud detection
+* Applied class weighting to improve recall from ~56% → ~92%
+* Tuned classification thresholds to balance precision and recall
+* Demonstrated tradeoffs using precision-recall curve
+---
+
+## Why This Matters
+
+In real-world fraud detection systems, missing fraudulent transactions is significantly more costly than false positives. This project demonstrates how model evaluation and threshold tuning must align with business objectives rather than relying on accuracy alone.
 
 ---
 
